@@ -40,6 +40,8 @@ while(no_acerto){
 }
 cout<<"Ganaste el juego!"<<endl;
 cout<<"Adivinaste el número secreto con "<<intentos<<" intentos."<<endl;
+cout.precision(2);
+cout<<fixed;
 cout<<"Su puntuación fue de "<<puntos<<" puntos"<<endl;
 
 }
