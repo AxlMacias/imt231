@@ -20,6 +20,7 @@ while(no_acerto){
 
 	if(acerto){
 		cout<<"Felicitaciones!!! Adivinaste el número secreto!"<<endl;
+		no_acerto=false;
 	}
 
 	else if(mayor){
@@ -30,5 +31,6 @@ while(no_acerto){
 		cout<<"El número ingresado es menor que el número secreto"<<endl;
 	}
 }
+cout<<"Ganaste el juego!"<<endl;
 
 }
