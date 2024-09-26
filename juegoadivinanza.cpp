@@ -7,10 +7,12 @@ cout<<" Bienvenido al Juego de la Adivinanza!";
 cout<<"**********************************"<<endl;
 
 const int NUMERO_SECRETO=42;
-int adivina;
+int adivina, intentos=0;
 bool no_acerto=true;
 
 while(no_acerto){
+	intentos++;
+	cout<<"Tentativa "<<intentos<<endl;
 	cout<<"Cuál es el número? ";
 	cin>>adivina;
 	cout<<"El valor de su número es: "<<adivina<<endl;
@@ -32,5 +34,6 @@ while(no_acerto){
 	}
 }
 cout<<"Ganaste el juego!"<<endl;
+cout<<"Adivinaste el número secreto con "<<intentos<<" intentos."<<endl;
 
 }
