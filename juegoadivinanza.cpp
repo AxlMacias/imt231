@@ -3,19 +3,37 @@
 using namespace std;
 
 int main(){
-cout<<"**********************************";
-cout<<"Bienvenido al Juego de la Adivinanza!";
 cout<<"**********************************"<<endl;
+cout<<" Bienvenido al Juego de la Adivinanza!"<<endl;
+cout<<"Ingrese un número en el rango: 1 a 100"<<endl;
+cout<<"**********************************"<<endl;
+
+cout<<endl;
+cout<<"Elija el nível de dificultad"<<endl;
+cout<<"Fácil (F), Medio (M) o Difícil (D)"<<endl;
+
+char dificultad;
+cin>>dificultad;
+int numero_tentativas;
+
+if(dificultad=='F'){
+    numero_tentativas=15;
+}
+else if(dificultad=='M'){
+    numero_tentativas=10;
+}
+else {
+    numero_tentativas=5;
+}
 
 srand(time(0));
 const int NUMERO_SECRETO=1+rand()%100;
 cout<<"Número secreto aleatorio generado entre 1 y 100: "<<NUMERO_SECRETO<<endl;
-int adivina, intentos=0;
+int adivina, intentos=1;
 bool no_acerto=true;
 double puntos=1000.0;
 
-while(no_acerto){
-	intentos++;
+for (intentos;intentos<numero_tentativas;intentos++){
 	cout<<"Tentativa "<<intentos<<endl;
 	cout<<"Cuál es el número? ";
 	cin>>adivina;
@@ -31,6 +49,7 @@ while(no_acerto){
 	if(acerto){
 		cout<<"Felicitaciones!!! Adivinaste el número secreto!"<<endl;
 		no_acerto=false;
+		break;
 	}
 
 	else if(mayor){
@@ -41,7 +60,7 @@ while(no_acerto){
 		cout<<"El número ingresado es menor que el número secreto"<<endl;
 	}
 }
-cout<<"Ganaste el juego!"<<endl;
+cout<<"Terminaste el juego!"<<endl;
 cout<<"Adivinaste el número secreto con "<<intentos<<" intentos."<<endl;
 cout.precision(2);
 cout<<fixed;
