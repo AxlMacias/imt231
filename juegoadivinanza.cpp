@@ -1,12 +1,15 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int main(){
 cout<<"**********************************";
-cout<<" Bienvenido al Juego de la Adivinanza!";
+cout<<"Bienvenido al Juego de la Adivinanza!";
 cout<<"**********************************"<<endl;
 
-const int NUMERO_SECRETO=42;
+srand(time(0));
+const int NUMERO_SECRETO=1+rand()%100;
+cout<<"Número secreto aleatorio generado entre 1 y 100: "<<NUMERO_SECRETO<<endl;
 int adivina, intentos=0;
 bool no_acerto=true;
 double puntos=1000.0;
